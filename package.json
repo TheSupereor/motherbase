@@ -1,0 +1,21 @@
+{
+  "name": "motherbase",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Self-hosted, event-driven integration and automation platform.",
+  "type": "module",
+  "packageManager": "pnpm@12.14.0",
+  "devEngines": {
+    "packageManager": {
+      "name": "pnpm",
+      "version": "12.14.0",
+      "onFail": "download"
+    }
+  },
+  "scripts": {
+    "typecheck": "pnpm -r typecheck"
+  },
+  "devDependencies": {
+    "typescript": "^7.0.2"
+  }
+}

@@ -1,0 +1,33 @@
+// Shared compiler rules for every Motherbase package.
+// Only "how to compile" lives here. Anything with a path (include, outDir, rootDir)
+// stays in each package: relative paths resolve from the file that declares them.
+{
+  "compilerOptions": {
+    // Node 26 runs ES2024 natively, so nothing needs to be down-levelled.
+    "target": "ES2024",
+    // Type definitions for the JS built-ins we can use (Array, Promise, Map...).
+    // Environment types (Node, DOM) are chosen per package through "types".
+    "lib": ["ES2024"],
+
+    // Follow Node's real module rules: ESM vs CJS comes from "type" in package.json.
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+
+    // The house rules: full strict mode, written out even though TS 7 defaults to it,
+    // so the contract does not depend on the compiler version.
+    "strict": true,
+    // array[i] and record[key] may be undefined; make the compiler say so.
+    "noUncheckedIndexedAccess": true,
+
+    // Every file must be transpilable on its own (tsx, SWC and esbuild work that way).
+    "isolatedModules": true,
+    // Lets default imports work with CommonJS libraries.
+    "esModuleInterop": true,
+    // Allows `import data from "./file.json"` with a typed result.
+    "resolveJsonModule": true,
+    // Windows ignores case in paths, Linux (CI, Docker) does not; fail early on mismatches.
+    "forceConsistentCasingInFileNames": true,
+    // Skip type-checking .d.ts files inside node_modules: their errors are not ours to fix.
+    "skipLibCheck": true
+  }
+}

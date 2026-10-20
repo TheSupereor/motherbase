@@ -1,0 +1,16 @@
+{
+  "name": "@motherbase/codec",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Event contracts shared by Motherbase apps.",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@motherbase/config": "workspace:*"
+  }
+}

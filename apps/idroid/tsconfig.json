@@ -1,0 +1,8 @@
+{
+  "extends": "@motherbase/config/tsconfig.base.json",
+  "compilerOptions": {
+    // A Node CLI: loads Node's globals (console, process) from @types/node.
+    "types": ["node"]
+  },
+  "include": ["src"]
+}

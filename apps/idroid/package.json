@@ -1,0 +1,19 @@
+{
+  "name": "@motherbase/idroid",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Motherbase operator CLI.",
+  "type": "module",
+  "scripts": {
+    "start": "tsx src/main.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@motherbase/codec": "workspace:*"
+  },
+  "devDependencies": {
+    "@motherbase/config": "workspace:*",
+    "@types/node": "^26.6.5",
+    "tsx": "^4.23.15"
+  }
+}
