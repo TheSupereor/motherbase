@@ -4,8 +4,8 @@
 - Date: 2026-10-23
 
 ## Context
-Internal packages like `@motherbase/codec` export Typescript source directly (`exports` points to `./src/index.ts`).
-The NextJS app compiles only its own `src/` with SWC, so at runtime `node dist/main.js` imports the codec's `.ts` files. We want no build step for internal packages and no build-order coupling between them.
+Internal packages like `@motherbase/codec` export TypeScript source directly (`exports` points to `./src/index.ts`).
+The NestJS app compiles only its own `src/` with SWC, so at runtime `node dist/main.js` imports the codec's `.ts` files. We want no build step for internal packages and no build-order coupling between them.
 
 ## Decision
 Internal packages are loaded in by Node's built-in type stripping (stable since Node 24.12/25.2; the project runs on Node 26). They must use erasable syntax only (`erasableSyntaxOnly`, `verbatimModuleSyntax` in each such package) and real `.ts` relative imports (allowed workspace-wide by `rewriteRelativeImportExtensions`).
