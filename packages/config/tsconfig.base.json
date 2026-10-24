@@ -28,6 +28,9 @@
     // Windows ignores case in paths, Linux (CI, Docker) does not; fail early on mismatches.
     "forceConsistentCasingInFileNames": true,
     // Skip type-checking .d.ts files inside node_modules: their errors are not ours to fix.
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    // Internal packages import each other with real ".ts" paths (Node type stripping needs them).
+    // Every package that type-checks their source needs this; it also works for packages that emit.
+    "rewriteRelativeImportExtensions": true,
   }
 }

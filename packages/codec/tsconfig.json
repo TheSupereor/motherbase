@@ -4,7 +4,10 @@
   "compilerOptions": {
     // Pure TypeScript: no Node or DOM globals. Using `process` or `console` here
     // would be a compile error, which keeps the contract runtime-agnostic.
-    "types": []
+    "types": [],
+    "noEmit": true,
+    "erasableSyntaxOnly": true,
+    "verbatimModuleSyntax": true,
   },
   // Only this package's sources; resolved from this file's folder.
   "include": ["src"]
