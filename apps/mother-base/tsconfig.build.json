@@ -1,0 +1,9 @@
+// Used in build, includes only src and uses compilerOptions with rootDir and outDir
+{
+    "extends": "./tsconfig.json",
+    "compilerOptions": {
+        "rootDir": "src",
+        "outDir": "dist",
+    },
+    "include": ["src"]
+}

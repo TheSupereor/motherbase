@@ -1,11 +1,10 @@
+// Editor's tsconfig, includes src and tests, but it's not used to build, so it does not have rootDir or outDir.
 {
   "extends": "@motherbase/config/tsconfig.base.json",
   "compilerOptions": {
     "types": ["node"],
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
-    "rootDir": "src",
-    "outDir": "dist"
   },
-  "include": ["src"]
+  "include": ["src", "test"],
 }

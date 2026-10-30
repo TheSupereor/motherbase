@@ -6,7 +6,9 @@
         "build": "nest build",
         "start": "nest start",
         "start:dev": "nest start --watch",
-        "typecheck": "tsc --noEmit"
+        "typecheck": "tsc --noEmit",     
+        "test": "vitest run", 
+        "test:watch": "vitest --watch"
     },
     "dependencies": {
         "@motherbase/codec": "workspace:*",
@@ -19,6 +21,7 @@
     "devDependencies": {
         "@motherbase/config": "workspace:*",
         "@nestjs/cli": "^12.0.10",
+        "@nestjs/testing": "^12.2.0",
         "@swc/cli": "^0.8.1",
         "@swc/core": "^1.16.18",
         "@types/node": "^26.6.5",

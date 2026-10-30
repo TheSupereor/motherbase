@@ -10,5 +10,5 @@
     "verbatimModuleSyntax": true,
   },
   // Only this package's sources; resolved from this file's folder.
-  "include": ["src"]
+  "include": ["src", "test"]
 }
