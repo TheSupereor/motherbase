@@ -10,8 +10,6 @@
     "mattpocock",
     "esbuild"
   ],
-  "ignorePaths": [
-    "pnpm-lock.yaml",
-  ],
+  "ignorePaths": ["pnpm-lock.yaml"],
   "useGitignore": true
 }

@@ -31,6 +31,6 @@
     "skipLibCheck": true,
     // Internal packages import each other with real ".ts" paths (Node type stripping needs them).
     // Every package that type-checks their source needs this; it also works for packages that emit.
-    "rewriteRelativeImportExtensions": true,
+    "rewriteRelativeImportExtensions": true
   }
 }

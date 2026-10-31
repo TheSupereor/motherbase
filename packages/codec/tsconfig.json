@@ -7,7 +7,7 @@
     "types": [],
     "noEmit": true,
     "erasableSyntaxOnly": true,
-    "verbatimModuleSyntax": true,
+    "verbatimModuleSyntax": true
   },
   // Only this package's sources; resolved from this file's folder.
   "include": ["src", "test"]
