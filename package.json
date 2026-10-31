@@ -15,9 +15,14 @@
   "scripts": {
     "typecheck": "pnpm -r typecheck",
     "test": "vitest run",
-    "test:watch": "vitest --watch"
+    "test:watch": "vitest --watch",
+    "format": "prettier --write \"**/*.ts\"",
+    "format:check": "prettier --check \"**/*.ts\"",
+    "spell": "cspell \"**\""
   },
   "devDependencies": {
+    "cspell": "^10.4.0",
+    "prettier": "3.9.10",
     "typescript": "^7.0.2",
     "vitest": "^5.0.5"
   }

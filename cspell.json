@@ -1,0 +1,17 @@
+{
+  "version": "0.2",
+  "language": "en,en-GB",
+  "words": [
+    "motherbase",
+    "idroid",
+    "paramtypes",
+    "transpilable",
+    "Rspack",
+    "mattpocock",
+    "esbuild"
+  ],
+  "ignorePaths": [
+    "pnpm-lock.yaml",
+  ],
+  "useGitignore": true
+}
