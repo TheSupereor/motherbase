@@ -16,8 +16,8 @@
     "typecheck": "pnpm -r typecheck",
     "test": "vitest run",
     "test:watch": "vitest --watch",
-    "format": "prettier --write \"**/*.ts\" \"**/*.json\" \"**/*.md\" \"**/*.yaml\"",
-    "format:check": "prettier --check \"**/*.ts\" \"**/*.json\" \"**/*.md\" \"**/*.yaml\"",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
     "spell": "cspell \"**\""
   },
   "devDependencies": {
