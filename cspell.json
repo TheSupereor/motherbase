@@ -2,13 +2,14 @@
   "version": "0.2",
   "language": "en,en-GB",
   "words": [
-    "motherbase",
+    "esbuild",
     "idroid",
-    "paramtypes",
-    "transpilable",
-    "Rspack",
     "mattpocock",
-    "esbuild"
+    "motherbase",
+    "paramtypes",
+    "Rspack",
+    "transpilable",
+    "tsgolint"
   ],
   "ignorePaths": ["pnpm-lock.yaml"],
   "useGitignore": true
