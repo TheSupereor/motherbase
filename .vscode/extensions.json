@@ -6,6 +6,7 @@
   "recommendations": [
     "esbenp.prettier-vscode",
     "streetsidesoftware.code-spell-checker",
-    "editorconfig.editorconfig"
+    "editorconfig.editorconfig",
+    "dbaeumer.vscode-eslint"
   ]
 }

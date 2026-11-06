@@ -13,17 +13,24 @@
     }
   },
   "scripts": {
-    "typecheck": "pnpm -r typecheck",
+    "typecheck": "pnpm -r typecheck && tsc --noEmit",
     "test": "vitest run",
     "test:watch": "vitest --watch",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "spell": "cspell \"**\""
+    "spell": "cspell \"**\"",
+    "lint": "eslint"
   },
   "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@types/node": "^26.6.5",
+    "@typescript/native": "npm:typescript@^7.0.2",
     "cspell": "^10.4.0",
+    "eslint": "^10.14.0",
+    "jiti": "^2.7.0",
     "prettier": "3.9.10",
-    "typescript": "^7.0.2",
+    "typescript": "npm:@typescript/typescript6@^6.0.2",
+    "typescript-eslint": "8.72.1",
     "vitest": "^5.0.5"
   }
 }
