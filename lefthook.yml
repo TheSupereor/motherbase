@@ -1,0 +1,36 @@
+glob_matcher: doublestar
+
+pre-commit:
+  parallel: false
+  jobs:
+    - name: format
+      run: pnpm exec prettier --write {staged_files} --ignore-unknown
+      stage_fixed: true
+
+    - name: lint
+      glob: "**/*.ts"
+      run: pnpm exec eslint {staged_files}
+
+    - name: spell
+      run: pnpm exec cspell {staged_files} --no-must-find-files
+
+commit-msg:
+  parallel: false
+  jobs:
+    - name: commit-lint
+      run: pnpm exec commitlint --edit {1}
+
+    - name: commit-spell
+      run: pnpm exec cspell --language-id commit-msg {1}
+
+pre-push:
+  parallel: false
+  jobs:
+    - name: lint
+      run: pnpm run lint
+
+    - name: typecheck
+      run: pnpm run typecheck
+
+    - name: tests
+      run: pnpm run test
