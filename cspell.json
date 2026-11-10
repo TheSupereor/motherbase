@@ -12,7 +12,8 @@
     "paramtypes",
     "Rspack",
     "transpilable",
-    "tsgolint"
+    "tsgolint",
+    "adr"
   ],
   "ignorePaths": ["pnpm-lock.yaml"],
   "useGitignore": true
