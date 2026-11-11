@@ -1,0 +1,59 @@
+name: CI Pipeline
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  test-and-build:
+    runs-on: ubuntu-24.04
+
+    steps:
+      - name: checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - name: setup
+        uses: pnpm/setup@fa36a5ef7dcdefc3a7cb25655c122e00cf6e636e # v3.1.2
+        with:
+          cache: true
+
+      - name: format check
+        run: pnpm run format:check
+
+      - name: test runner
+        run: pnpm run test
+
+      - name: spell checker
+        run: pnpm run spell
+
+      - name: type checker
+        run: pnpm run typecheck
+
+      - name: build
+        run: pnpm run build
+
+      - name: linter
+        run: pnpm run lint
+
+  commitlint:
+    runs-on: ubuntu-24.04
+
+    if: github.event_name == 'pull_request'
+    steps:
+      - name: checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 0
+
+      - name: setup
+        uses: pnpm/setup@fa36a5ef7dcdefc3a7cb25655c122e00cf6e636e # v3.1.2
+        with:
+          cache: true
+
+      - name: Validate PR commits with commitlint
+        run: pnpm exec commitlint --from ${{ github.event.pull_request.base.sha }} --to ${{ github.event.pull_request.head.sha }} --verbose
