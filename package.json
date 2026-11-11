@@ -18,8 +18,9 @@
     "test:watch": "vitest --watch",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "spell": "cspell \"**\"",
-    "lint": "eslint"
+    "spell": "cspell",
+    "lint": "eslint",
+    "build": "pnpm -r build"
   },
   "devDependencies": {
     "@commitlint/cli": "^21.2.4",
