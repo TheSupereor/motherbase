@@ -1,0 +1,58 @@
+version: 2
+
+updates:
+  # monorepo pnpm dependencies
+  - package-ecosystem: npm
+    directory: "/"
+
+    schedule:
+      interval: weekly
+      day: monday
+      time: "04:00"
+      timezone: "America/Fortaleza"
+
+    # Conventional Commits / Angular
+    commit-message:
+      prefix: "build"
+      include: "scope"
+
+    # Group compatible updates
+    groups:
+      dependencies:
+        patterns:
+          - "*"
+        update-types:
+          - minor
+          - patch
+
+      major-updates:
+        patterns:
+          - "*"
+        update-types:
+          - major
+
+    # TypeScript 7: wait compatibility
+    # Detailed in docs/adr/0004-activate-dependabot.md
+    ignore:
+      - dependency-name: "typescript"
+        versions:
+          - ">=7.0.0"
+
+  # GitHub Actions
+  - package-ecosystem: github-actions
+    directory: /
+
+    schedule:
+      interval: weekly
+      day: monday
+      time: "04:00"
+      timezone: "America/Fortaleza"
+
+    commit-message:
+      prefix: "ci"
+      include: "scope"
+
+    groups:
+      github-actions:
+        patterns:
+          - "*"
