@@ -37,3 +37,15 @@ The project pins its GitHub Actions to full commit SHAs and has 12 outdated depe
 ## When to revisit
 
 - When a new TypeScript version is released with a new API, then the ignore can be deleted and both typescript-eslint and motherbase can be updated.
+
+## Update (2026-03-04)
+
+The consequence "alerts and security updates from it will not be created" was wrong.
+Measured: an SBOM lists 655 npm packages, with transient and exact versions
+despite the lockfile being on 2 documents, and `minimatch` has
+an [alert](GHSA-g3hv-75wg-m249 "https://github.com/advisories/GHSA-g3hv-75wg-m249").
+This contradicts the [supported ecosystems table on pnpm](https://docs.github.com/en/code-security/dependabot/ecosystems-supported-by-dependabot/supported-ecosystems-and-repositories).
+The security update also failed with code `security_update_not_possible`
+the most recent version accepted by @swc/cli is 9.0.9, and the fixed
+version is 11.0.1.
+The decision stands.
